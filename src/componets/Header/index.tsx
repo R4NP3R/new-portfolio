@@ -26,7 +26,7 @@ export const Header = () => {
   const [activeOption, setActiveOption] = useState("inicio");
 
   return (
-    <header className="w-full border-b-[0.1px] border-[#44475A]">
+    <header className="w-full border-b-[0.1px] border-[#44475A] fixed bg-[#282A36]">
       <div className="flex my-container relative">
         <div className="w-full flex text-2xl text-[#F8F8F2] py-4">
           &lt;

@@ -3,7 +3,7 @@ import { SlArrowDown, SlArrowRight } from "react-icons/sl";
 
 interface ObjectLineInfo {
   name: string;
-  data: string | number;
+  data: string | number | boolean;
   isFinal?: boolean;
 }
 
@@ -57,10 +57,16 @@ export const ObjectLine = ({
                       <div>
                         <span className="text-[#F8F8F2]">{info.name}</span>
                         <span className="text-[#FF6E9D]">:</span>
-                        {typeof info.data === "string" ? (
+                        {typeof info.data === "string" && (
                           <span className="text-[#E9F270]"> "{info.data}"</span>
-                        ) : (
-                          <span className="text-[#BD93F9]">{info.data}</span>
+                        )}
+                        {typeof info.data === "number" && (
+                          <span className="text-[#BD93F9]"> {info.data}</span>
+                        )}
+                        {typeof info.data === "boolean" && (
+                          <span className="text-[#BD93F9]">
+                            {info.data ? " true" : " false"}
+                          </span>
                         )}
                         {!info.isFinal ? (
                           <span className="text-[#F8F8F2]">
@@ -89,10 +95,16 @@ export const ObjectLine = ({
             <div>
               <span className="text-[#F8F8F2]">{info.name}</span>
               <span className="text-[#FF6E9D]">:</span>
-              {typeof info.data === "string" ? (
+              {typeof info.data === "string" && (
                 <span className="text-[#E9F270]"> "{info.data}"</span>
-              ) : (
-                <span className="text-[#BD93F9]">{info.data}</span>
+              )}
+              {typeof info.data === "number" && (
+                <span className="text-[#BD93F9]"> {info.data}</span>
+              )}
+              {typeof info.data === "boolean" && (
+                <span className="text-[#BD93F9]">
+                  {info.data ? " true" : " false"}
+                </span>
               )}
               {!info.isFinal ? (
                 <span className="text-[#F8F8F2]">

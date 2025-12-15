@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SlArrowDown, SlArrowRight } from "react-icons/sl";
-import { ObjectLine, type ObjectLineDataParams } from "../../ObjectLine";
+import { ObjectLine, type ObjectLineDataParams } from "../ObjectLine";
 
 export interface ObjectInfoParams {
   name: string,
@@ -45,7 +45,7 @@ export const ObjectInfo = ({name, interfaceName, isArray, objectLineData}:Object
             {handleInformations && (
               <div className="flex">
                 <div className="w-5 bg-[#373937] border-l border-l-[#6B7873]"></div>                
-                <div className="w-1/2">
+                <div className="w-2/3">
                   {objectLineData.map((info) => <ObjectLine objectLineInfo={info.objectLineInfo} isObject={info.isObject} objectName={info.objectName} />)}
                 </div>
               </div>

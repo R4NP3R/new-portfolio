@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
-import type { navigationLinks } from "../../navigationLinks";
 
 
-const aroz:navigationLinks = {
-  link: "rafael",
-  name: "rafel"
+export interface navigationLinks {
+  link: string;
+  name: string;
 }
 
 const navigationLinks: navigationLinks[] = [

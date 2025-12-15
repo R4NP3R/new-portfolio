@@ -1,24 +1,48 @@
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
+import { FaReact } from "react-icons/fa";
+import Package from "../../assets/package_dark.svg?react";
+import type { IconType } from "react-icons";
 
+interface iconProps {
+  url: IconType | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  color?: string;
+  width: number;
+}
 
 export interface navigationLinks {
   link: string;
   name: string;
+  icon: iconProps;
 }
 
 const navigationLinks: navigationLinks[] = [
   {
     link: "#home",
     name: "inicio",
+    icon: {
+      url: FaReact,
+      width: 24,
+      color: "#116CA1",
+    },
   },
   {
     link: "#projetos",
     name: "projetos",
+    icon: {
+      url: Package,
+      width: 24,
+      color: "#116CA1",
+    },
   },
   {
     link: "#",
     name: "contato",
+    icon: {
+      url: FaReact,
+      width: 24,
+      color: "#116CA1",
+    },
   },
 ];
 
@@ -43,32 +67,38 @@ export const Header = () => {
           </p>
           /&gt;
         </div>
-        <ul className="flex w-full justify-end absolute bottom-[-1px] left-0 h-full w-fu">
-          {navigationLinks.map((link) => {
-            return (
-              <li
-                key={link.name}
-                className={
-                  activeOption === link.name
-                    ? "bg-[#282A36] px-8 flex items-center border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-50"
-                    : "bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-t border-t-transparent transition-all delay-50"
-                }
-                onClick={() => setActiveOption(link.name)}
-              >
-                <a
-                  href={link.link}
-                  className={
-                    activeOption === link.name
-                      ? "font-bold text-xl uppercase text-[#F8F8F2] transition-all delay-50"
-                      : "text-xl uppercase text-[#627299] transition-all delay-50"
-                  }
-                >
-                  {link.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        <nav>
+          <ul className="flex w-full justify-end absolute bottom-[-1px] left-0 h-full w-fu">
+            {navigationLinks.map((linkItem) => {
+              const { icon, name, link } = linkItem;
+              return (
+                <li key={name} className="h-full">
+                  <a
+                    href={link}
+                    className={
+                      activeOption === name
+                        ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#282A36] px-8 flex items-center border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-50"
+                        : "text-xl uppercase text-[#627299] h-full bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-t border-t-transparent transition-all delay-50"
+                    }
+                    onClick={() => setActiveOption(name)}
+                  >
+                    {
+                      <icon.url
+                        style={{
+                          fontSize: `${icon.width}px`,
+                          color: `${icon.color}`,
+                          width: `${icon.width}px`,
+                          height: `${icon.width}px`,
+                        }}
+                      />
+                    }
+                    <span className="ml-1">{name}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       </div>
     </header>
   );

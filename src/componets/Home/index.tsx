@@ -83,8 +83,8 @@ const stacks: ObjectInfoParams = {
 
 export const Home = () => {
   return (
-    <div className="flex flex-col my-container">
-      <div className="mb-20">
+    <div className="flex flex-col my-container ">
+      <div className="mb-20 mt-20">
         <ImportInfo
           type="import type"
           importName="Informações"

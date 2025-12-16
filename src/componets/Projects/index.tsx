@@ -94,10 +94,10 @@ export const Projects = () => {
 
   return (
     <section
-      className="min-h-dvh pt-17 jetbrains bg-[#2B2D30] flex"
+      className="min-h-dvh pt-17 jetbrains bg-linear-to-t from-[#2B2D30] from-95%  to-[#282A36] flex"
       id="projetos"
     >
-      <div className="w-2/6 px-5">
+      <div className="w-2/6 px-5 bg-linear-to-b from-95% from-[#2B2D30] to-[#0D1117] ">
         <p className="flex items-center cursor-pointer rounded-lg px-4 py-1 relative group">
           <span className="relative">
             {handleInformations ? (
@@ -139,21 +139,21 @@ export const Projects = () => {
         )}
       </div>
       {isActive === "frontEnd" && (
-        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+        <div className="w-full bg-linear-to-b from-[#1E1F22] from-95% to-[#0D1117] grid grid-cols-2 gap-6 px-4 py-1">
           {projetosFrontEnd.map((projeto) => (
             <ProjectInfo projects={projeto} />
           ))}
         </div>
       )}
       {isActive === "backEnd" && (
-        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+        <div className="w-full bg-linear-to-b from-[#1E1F22] from-95% to-[#0D1117] grid grid-cols-2 gap-6 px-4 py-1">
           {projetosBackEnd.map((projeto) => (
             <ProjectInfo projects={projeto} />
           ))}
         </div>
       )}
       {isActive === "fullStack" && (
-        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+        <div className="w-full bg-linear-to-b from-[#1E1F22] from-95% to-[#0D1117] grid grid-cols-2 gap-6 px-4 py-1">
           <div>
             <span className="text-[#F96967]">
               Exception in thread "FullStack" java.lang.NullPointerException

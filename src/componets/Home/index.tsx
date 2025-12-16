@@ -87,6 +87,11 @@ const stacks: ObjectInfoParams = {
           data: true,
           isFinal: true,
         },
+        {
+          name: "git",
+          data: true,
+          isFinal: true,
+        },
       ],
     },
   ],
@@ -94,8 +99,8 @@ const stacks: ObjectInfoParams = {
 
 export const Home = () => {
   return (
-    <div className="bg-linear-to-b from-[#282A36] from-95% to-[#2B2D30]">
-      <div className="flex flex-col my-container min-h-dvh cascadia" id="home">
+    <section className="bg-linear-to-b bg-[#282A36]" id="home">
+      <div className="flex flex-col my-container min-h-dvh cascadia">
         <div className="mb-20 mt-20">
           <ImportInfo
             type="import type"
@@ -121,6 +126,6 @@ export const Home = () => {
           isArray={stacks.isArray}
         />
       </div>
-    </div>
+    </section>
   );
 };

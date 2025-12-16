@@ -57,7 +57,7 @@ export const ProjectInfo = ({ projects }: ProjectInfoParams) => {
         </p>
         <p className="text-lg">
           <span className="text-[#CE8D59]">public project</span>
-          <span className="text-[#B4B5B3]">
+          <span className="text-[#B4B5B3] capitalize">
             {" "}
             {name} {"{"}
           </span>

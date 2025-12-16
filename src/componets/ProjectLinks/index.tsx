@@ -23,7 +23,7 @@ export const ProjectLinks = ({ github, site }: ProjectLinksParams) => {
           >
             GithubRepository
           </a>
-          <span className="text-[#C16E9C]"> {github.name}</span>
+          <span className="text-[#C16E9C] lowercase"> {github.name}</span>
           <span className="text-[#B4B5B3]">{";"}</span>
         </div>
       </p>
@@ -39,7 +39,7 @@ export const ProjectLinks = ({ github, site }: ProjectLinksParams) => {
             >
               ExternalSite
             </a>
-            <span className="text-[#C16E9C]"> {site.name}</span>
+            <span className="text-[#C16E9C] lowercase"> {site.name}</span>
             <span className="text-[#B4B5B3]">{";"}</span>
           </div>
         </p>

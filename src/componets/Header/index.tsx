@@ -72,7 +72,7 @@ export const Header = () => {
         `${activeOption == "contato" && "border-[#44475A] bg-[#010409]"} `
       }
     >
-      <div className="flex my-container relative">
+      <div className="flex my-container">
         <div className="w-full flex text-2xl text-[#F8F8F2] py-4">
           &lt;
           <p className="text-[#79E9FD] text-2xl font-bold">
@@ -88,8 +88,8 @@ export const Header = () => {
           </p>
           /&gt;
         </div>
-        <nav>
-          <ul className="flex w-full justify-end absolute left-0 h-full w-full">
+        <nav className="relative w-full">
+          <ul className={activeOption === "home" ? (`flex justify-end absolute bottom-[-1px] left-0 h-full w-full`) : (`flex justify-end h-full w-full`)}>
             {navigationLinks.map((linkItem) => {
               const { icon, name, link } = linkItem;
               return (
@@ -101,24 +101,24 @@ export const Header = () => {
                       ${
                         activeOption === "home" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bottom-[-1px] bg-[#282A36] px-8 flex items-center border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-50"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-t border-t-transparent transition-all delay-50")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full  bg-[#282A36] px-8 flex items-center border-b-4 border-b-transparent border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-50"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-b-4 border-b-transparent border-t border-t-transparent transition-all delay-50")
                       } 
                       ` +
                       `
                       ${
                         activeOption === "projetos" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#3574F0] rounded-b-sm transition-all delay-50"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-transparent transition-all delay-50")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#3574F0] rounded-b-sm transition-all delay-50 border-t border-t-transparent"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-transparent transition-all delay-50 border-t border-t-transparent")
                       } 
                       ` +
                       `
                       ${
                         activeOption === "contato" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#F78166] transition-all delay-50"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center  border-b-4 border-b-transparent transition-all delay-50")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#F78166] transition-all delay-50 border-t border-t-transparent"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center  border-b-4 border-b-transparent transition-all delay-50 border-t border-t-transparent")
                       }
                       `
                     }

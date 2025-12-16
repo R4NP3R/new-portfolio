@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.mona-sans {
+  font-family: "Mona Sans", sans-serif;
+}
+
 .cascadia {
   font-family: "Cascadia Code", sans-serif;
 }
@@ -8,10 +12,6 @@
   font-family: "JetBrains Mono", monospace;
 }
 
-body {
-
-  /* background-color: #282A36; */
-}
 
 .my-container {
   width: 95%;

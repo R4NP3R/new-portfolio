@@ -114,12 +114,6 @@ export const Contact = () => {
                     <span className='text-2xl'>Github</span>
                   </a>
                 </li>
-                <li>
-                  <a href="ssrafa.2014@gmail.com" className='flex items-center'>
-                    <LogoBi.BiLogoGmail className='text-5xl text-red-600' />
-                    <span className='text-2xl'>Email</span>
-                  </a>
-                </li>
               </ul>
             </div>       
               <img className='w-2/5 mt-4' src="https://camo.githubusercontent.com/fa39daa38b5c779187695c0ddf8ed00d3f702f29ccf8a1f7374c7c9ef1580b8b/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d52344e503352266c61796f75743d636f6d70616374267468656d653d7261646963616c26686964653d73776966742c6373686172702532372f253345" alt="" />

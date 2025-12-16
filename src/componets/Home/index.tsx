@@ -4,7 +4,7 @@ import { ObjectInfo, type ObjectInfoParams } from "../ObjectInfo";
 const infomations: ObjectInfoParams = {
   name: "Rafael",
   interfaceName: "informações",
-  isArray: true,
+  isArray: false,
   objectLineData: [
     {
       isObject: false,

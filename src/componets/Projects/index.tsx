@@ -2,6 +2,7 @@ import { useState } from "react";
 import PackageIcon from "../../assets/package_dark.svg?react";
 import ModuleIcon from "../../assets/module_dark.svg?react";
 import { SlArrowDown, SlArrowRight } from "react-icons/sl";
+import { ProjectInfo, type ProjectInfoData } from "../../ProjectInfo";
 
 interface ProjectTecnologies {
   name: string;
@@ -15,9 +16,77 @@ const tecnologia: ProjectTecnologies[] = [
     name: "backEnd",
   },
   {
-    name: "FullStack",
+    name: "fullStack",
   },
 ];
+
+const projetosFrontEnd: ProjectInfoData[] = [
+  {
+    annotation: [
+      {
+        name: "Stacks",
+        parameters: [
+          {
+            name: "language",
+            data: "typescript",
+          },
+          {
+            name: "framework",
+            data: "react",
+            isFinal: true,
+          },
+        ],
+      },
+    ],
+    image: "https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png",
+    name: "ListaUsuários",
+    projectLinks: {
+      github: {
+        link: "https://github.com/R4NP3R",
+        name: "ListaUsuários",
+      },
+      site: {
+        link: "https://github.com/R4NP3R",
+        name: "ListaUsuários",
+      },
+    },
+  },
+];
+
+const projetosBackEnd: ProjectInfoData[] = [
+  {
+    annotation: [
+      {
+        name: "Stacks",
+        parameters: [
+          {
+            name: "language",
+            data: "typescript",
+          },
+          {
+            name: "framework",
+            data: "react",
+            isFinal: true,
+          },
+        ],
+      },
+    ],
+    image: "https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png",
+    name: "ListaUsuários",
+    projectLinks: {
+      github: {
+        link: "https://github.com/R4NP3R",
+        name: "ListaUsuários",
+      },
+      site: {
+        link: "https://github.com/R4NP3R",
+        name: "ListaUsuários",
+      },
+    },
+  },
+];
+
+const projetosFull: ProjectInfoData[] = [];
 
 export const Projects = () => {
   const [isActive, setIsActive] = useState("frontEnd");
@@ -69,48 +138,33 @@ export const Projects = () => {
           </ul>
         )}
       </div>
-      <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-4 p-5">
-        <div>
-          <p className="text-lg">
-            <span className="text-[#9E9C43]">@FrontEnd</span>
-            <span className="text-[#B4B5B3]">{"("}</span>
-            <span className="text-[#B4B5B3]">language = </span>
-            <span className="text-[#69954C]">"typescript"</span>
-            <span className="text-[#B4B5B3]">
-              {")"} <br />
-            </span>
-            <span className="text-[#9E9C43]">
-              @RequiredArgsConstructor <br />
-            </span>
-            <span className="text-[#CE8D59]">public project</span>
-            <span className="text-[#B4B5B3]"> Macaco {"{"}</span>
-          </p>
-          <img
-            src="https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png"
-            alt=""
-          />
-          <div className="flex mt-2">
-            <p className="pl-4 text-lg w-full relative group">
-              <div className="bg-[#26282E] absolute h-full w-full z-[-1]"></div>
-              <div className="static z-10">
-                <span className="text-[#CE8D59]">private final </span>
-                <a
-                  href="#"
-                  target="_blank"
-                  className="text-[#B4B5B3] hover:underline"
-                >
-                  GithubRepository
-                </a>
-                <span className="text-[#C16E9C]"> macaco</span>
-                <span className="text-[#B4B5B3]">{";"}</span>
-              </div>
-            </p>
-          </div>
-          <p>
-            <span className="text-[#B4B5B3]">{"}"}</span>
-          </p>
+      {isActive === "frontEnd" && (
+        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+          {projetosFrontEnd.map((projeto) => (
+            <ProjectInfo projects={projeto} />
+          ))}
         </div>
-      </div>
+      )}
+      {isActive === "backEnd" && (
+        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+          {projetosBackEnd.map((projeto) => (
+            <ProjectInfo projects={projeto} />
+          ))}
+        </div>
+      )}
+      {isActive === "fullStack" && (
+        <div className="w-full bg-[#1E1F22] grid grid-cols-2 gap-6 px-4 py-1">
+          <div>
+            <span className="text-[#F96967]">
+              Exception in thread "FullStack" java.lang.NullPointerException
+            </span>
+            <br/>
+            <span className="text-[#F96967] ml-5">
+              at life.projects.fullstack{"(null)"}
+            </span>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

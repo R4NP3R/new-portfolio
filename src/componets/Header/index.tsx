@@ -4,6 +4,7 @@ import { FaReact } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import Package from "../../assets/package_dark.svg?react";
 import { LuUserRound } from "react-icons/lu";
+import { Link } from "react-scroll";
 
 interface iconProps {
   url: IconType | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -12,14 +13,13 @@ interface iconProps {
 }
 
 export interface navigationLinks {
-  link: string;
+
   name: string;
   icon: iconProps;
 }
 
 const navigationLinks: navigationLinks[] = [
   {
-    link: "#home",
     name: "home",
     icon: {
       url: FaReact,
@@ -28,7 +28,6 @@ const navigationLinks: navigationLinks[] = [
     },
   },
   {
-    link: "#projetos",
     name: "projetos",
     icon: {
       url: Package,
@@ -37,7 +36,6 @@ const navigationLinks: navigationLinks[] = [
     },
   },
   {
-    link: "#contato",
     name: "contato",
     icon: {
       url: LuUserRound,
@@ -66,7 +64,7 @@ export const Header = () => {
   return (
     <header
       className={
-        `w-full border-b-[0.1px] fixed cascadia z-50 transition-all delay-150 ` +
+        `w-full border-b-[0.1px] fixed cascadia z-50 transition-all delay-100 ` +
         `${activeOption == "home" && "border-[#44475A] bg-[#282A36] "} ` +
         `${activeOption == "projetos" && "border-[#393B40] bg-[#1E1F22] "} ` +
         `${activeOption == "contato" && "border-[#44475A] bg-[#010409]"} `
@@ -89,36 +87,45 @@ export const Header = () => {
           /&gt;
         </div>
         <nav className="relative w-full">
-          <ul className={activeOption === "home" ? (`flex justify-end absolute bottom-[-1px] left-0 h-full w-full`) : (`flex justify-end h-full w-full`)}>
+          <ul
+            className={
+              activeOption === "home"
+                ? `flex justify-end absolute bottom-[-1px] left-0 h-full w-full`
+                : `flex justify-end h-full w-full`
+            }
+          >
             {navigationLinks.map((linkItem) => {
-              const { icon, name, link } = linkItem;
+              const { icon, name } = linkItem;
               return (
                 <li key={name} className="h-full">
-                  <a
-                    href={link}
+                  <Link
+                    to={name}     
+                    smooth={true}   
+                    duration={1500}
+                    spy={true}                    
                     className={
                       `
                       ${
                         activeOption === "home" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full  bg-[#282A36] px-8 flex items-center border-b-4 border-b-transparent border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-50"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-b-4 border-b-transparent border-t border-t-transparent transition-all delay-50")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full  bg-[#282A36] px-8 flex items-center border-b-4 border-b-transparent border-t border-t-[#FF6E9D] border-x-[0.1px] border-x-[#44475A] transition-all delay-100 cursor-pointer"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#21222C] px-8 flex items-center border-x-[0.1px] border-x-[#44475A] border-b-4 border-b-transparent border-t border-t-transparent transition-all delay-100 cursor-pointer")
                       } 
                       ` +
                       `
                       ${
                         activeOption === "projetos" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#3574F0] rounded-b-sm transition-all delay-50 border-t border-t-transparent"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-transparent transition-all delay-50 border-t border-t-transparent")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#3574F0] rounded-b-sm transition-all delay-100 border-t border-t-transparent cursor-pointer"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#1E1F22] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-transparent transition-all delay-100 border-t border-t-transparent cursor-pointer")
                       } 
                       ` +
                       `
                       ${
                         activeOption === "contato" &&
                         (activeOption === name
-                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#F78166] transition-all delay-50 border-t border-t-transparent"
-                          : "text-xl uppercase text-[#627299] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center  border-b-4 border-b-transparent transition-all delay-50 border-t border-t-transparent")
+                          ? "font-bold text-xl uppercase text-[#F8F8F2] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center border-b-4 border-b-[#F78166] transition-all delay-100 border-t border-t-transparent cursor-pointer"
+                          : "text-xl uppercase text-[#627299] h-full bg-[#010409] px-8 border-x-[0.1px] border-x-transparent flex items-center  border-b-4 border-b-transparent transition-all delay-100 border-t border-t-transparent cursor-pointer")
                       }
                       `
                     }
@@ -135,7 +142,7 @@ export const Header = () => {
                       />
                     }
                     <span className="ml-1">{name}</span>
-                  </a>
+                  </Link>
                 </li>
               );
             })}

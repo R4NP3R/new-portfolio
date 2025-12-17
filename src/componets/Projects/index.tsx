@@ -214,7 +214,7 @@ export const Projects = () => {
 
   return (
     <section
-      className="min-h-dvh pt-17 b-10 jetbrains bg-linear-to-t from-[#2B2D30] from-95% to-[#282A36] flex"
+      className="min-h-[110vh] pt-17 b-10 jetbrains bg-linear-to-t from-[#2B2D30] from-95% to-[#282A36] flex"
       id="projetos"
     >
       <div className="w-2/6 px-5 bg-linear-to-b from-95% from-[#2B2D30] to-[#0D1117] ">

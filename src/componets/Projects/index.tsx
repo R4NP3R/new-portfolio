@@ -173,40 +173,40 @@ const projetosFrontEnd: ProjectInfoData[] = [
   },
 ];
 
-const projetosBackEnd: ProjectInfoData[] = [
-  {
-    annotation: [
-      {
-        name: "Stacks",
-        parameters: [
-          {
-            name: "language",
-            data: "typescript",
-          },
-          {
-            name: "framework",
-            data: "react",
-            isFinal: true,
-          },
-        ],
-      },
-    ],
-    image: "https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png",
-    name: "ListaUsuários",
-    projectLinks: {
-      github: {
-        link: "https://github.com/R4NP3R",
-        name: "ListaUsuários",
-      },
-      site: {
-        link: "https://github.com/R4NP3R",
-        name: "ListaUsuários",
-      },
-    },
-  },
-];
+// const projetosBackEnd: ProjectInfoData[] = [
+//   {
+//     annotation: [
+//       {
+//         name: "Stacks",
+//         parameters: [
+//           {
+//             name: "language",
+//             data: "typescript",
+//           },
+//           {
+//             name: "framework",
+//             data: "react",
+//             isFinal: true,
+//           },
+//         ],
+//       },
+//     ],
+//     image: "https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png",
+//     name: "ListaUsuários",
+//     projectLinks: {
+//       github: {
+//         link: "https://github.com/R4NP3R",
+//         name: "ListaUsuários",
+//       },
+//       site: {
+//         link: "https://github.com/R4NP3R",
+//         name: "ListaUsuários",
+//       },
+//     },
+//   },
+// ];
 
-const projetosFull: ProjectInfoData[] = [];
+// const projetosFull: ProjectInfoData[] = [];
 
 export const Projects = () => {
   const [isActive, setIsActive] = useState("frontEnd");

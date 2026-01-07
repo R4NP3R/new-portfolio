@@ -3,7 +3,8 @@ import { SlArrowDown, SlArrowRight } from "react-icons/sl";
 import ModuleIcon from "../../assets/module_dark.svg?react";
 import PackageIcon from "../../assets/package_dark.svg?react";
 import { ProjectInfo, type ProjectInfoData } from "../../ProjectInfo";
-import moviefliximg from "../../assets/BE-movieflix.png"
+import movieflixBEimg from "../../assets/BE-movieflix.png";
+import movieflixFEimg from "../../assets/FE-movieflix.png";
 
 interface ProjectTecnologies {
   name: string;
@@ -34,7 +35,7 @@ const projetosFrontEnd: ProjectInfoData[] = [
           {
             name: "framework",
             data: "react",
-            isFinal: true
+            isFinal: true,
           },
         ],
       },
@@ -64,7 +65,33 @@ const projetosFrontEnd: ProjectInfoData[] = [
           {
             name: "framework",
             data: "react",
-            isFinal: true
+            isFinal: true,
+          },
+        ],
+      },
+    ],
+    image: movieflixFEimg,
+    name: "MovieFlix",
+    projectLinks: {
+      github: {
+        link: "https://github.com/R4NP3R/movieFlix/tree/main/movieflix-front",
+        name: "MovieFlix",
+      },
+    },
+  },
+  {
+    annotation: [
+      {
+        name: "Stacks",
+        parameters: [
+          {
+            name: "language",
+            data: "typescript",
+          },
+          {
+            name: "framework",
+            data: "react",
+            isFinal: true,
           },
         ],
       },
@@ -188,54 +215,64 @@ const projetosBackEnd: ProjectInfoData[] = [
           {
             name: "framework",
             data: "sprigboot",
-            isFinal: true
+            isFinal: true,
           },
         ],
       },
     ],
-    image: moviefliximg,
+    image: movieflixBEimg,
     name: "MovieFlix",
     projectLinks: {
       github: {
-        link: "https://github.com/R4NP3R/movieFlix",
+        link: "https://github.com/R4NP3R/movieFlix/tree/main/movieflix-back",
         name: "movieflix",
       },
     },
   },
 ];
-//   {
-//     annotation: [
-//       {
-//         name: "Stacks",
-//         parameters: [
-//           {
-//             name: "language",
-//             data: "typescript",
-//           },
-//           {
-//             name: "framework",
-//             data: "react",
-//             isFinal: true,
-//           },
-//         ],
-//       },
-//     ],
-//     image: "https://portfolio-ranper.vercel.app/assets/mensal-cMeIJS1Q.png",
-//     name: "ListaUsuários",
-//     projectLinks: {
-//       github: {
-//         link: "https://github.com/R4NP3R",
-//         name: "ListaUsuários",
-//       },
-//       site: {
-//         link: "https://github.com/R4NP3R",
-//         name: "ListaUsuários",
-//       },
-//     },
-//   },
-// ];
 
-// const projetosFull: ProjectInfoData[] = [];
+const projetosFull: ProjectInfoData[] = [
+  {
+    annotation: [
+      {
+        name: "FrontEndStacks",
+        parameters: [
+          {
+            name: "language",
+            data: "typescript",
+          },
+          {
+            name: "framework",
+            data: "react",
+            isFinal: true,
+          },
+        ],
+      },
+      {
+        name: "BackEndStacks",
+        parameters: [
+          {
+            name: "language",
+            data: "java",
+          },
+          {
+            name: "framework",
+            data: "sprigboot",
+            isFinal: true,
+          },
+        ],
+      },
+    ],
+    image: movieflixFEimg,
+    name: "MovieFlix",
+    projectLinks: {
+      github: {
+        link: "https://github.com/R4NP3R/movieFlix/",
+        name: "movieflix",
+      },
+    },
+  },
+];
 
 export const Projects = () => {
   const [isActive, setIsActive] = useState("frontEnd");
@@ -303,15 +340,9 @@ export const Projects = () => {
       )}
       {isActive === "fullStack" && (
         <div className="w-full bg-linear-to-b from-[#1E1F22] from-95% to-[#0D1117] grid grid-cols-2 gap-6 px-4 py-1">
-          <div>
-            <span className="text-[#F96967]">
-              Exception in thread "FullStack" java.lang.NullPointerException
-            </span>
-            <br />
-            <span className="text-[#F96967] ml-5">
-              at life.projects.fullstack{"(null)"}
-            </span>
-          </div>
+          {projetosFull.map((projeto) => (
+            <ProjectInfo projects={projeto} />
+          ))}
         </div>
       )}
     </section>
